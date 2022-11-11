@@ -25,7 +25,7 @@
             style="box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px"
           >
             <v-card-title class="text-xs-right">
-              <span class="text-xs-right main-title ml-2 mb-n3">Sondhana</span>
+              <span class="text-xs-right main-title ml-2 mb-n3">Kompost</span>
             </v-card-title>
             <v-card-text>
               <div class="text-xs-center"></div>
@@ -33,15 +33,15 @@
                 <v-form ref="form" v-model="valid" lazy-validation>
                   <v-row row wrap>
                     <v-col md12 xs12 class="pb-0" md="12" cols="12">
-                      <span>Email</span>
+                      <span>Phone Number</span>
                       <v-text-field
-                        v-model="email"
-                        type="email"
+                        v-model="phone"
+                        type="phone"
                         outlined
                         required
                         dense
-                        placeholder="e.g. johndoe@email.com"
-                        :rules="emailRules"
+                        placeholder="e.g. 9808546378"
+                        :rules="phoneRules"
                       >
                       </v-text-field>
                     </v-col>
@@ -114,11 +114,10 @@ export default {
   data: () => ({
     loading: false,
     login: false,
-    email: "",
-    password: "",
-    emailRules: [
-      (v) => !!v || "Email is required",
-      (v) => /.+@.+/.test(v) || "E-mail must be valid",
+    phone: "9818254567",
+    password: "12345678",
+    phoneRules: [
+      (v) => !!v || "Phone Number is required",
     ],
     passwordRules: [(v) => !!v || "Password is required"],
     valid: false,
@@ -128,13 +127,14 @@ export default {
     async accessLogin() {
       this.loading = true;
       let formObj = {
-        email: this.email,
+        phone: this.phone,
         password: this.password,
       };
       await LoginService.handleLogin(formObj).then((res) => {
-        if (res == "success") {
+        console.log("response",res);
+        if (res == "Success") {
           this.loading = false;
-          this.$router.push("/project-create");
+          this.$router.push("/dashboard");
         } else {
           this.loading = false;
           this.errorSnackBar = true;

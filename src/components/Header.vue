@@ -76,10 +76,10 @@ export default {
 
     items: [
       {
-        title: "Home",
+        title: "Dashboard",
         icon: "mdi-home",
-        href: "/",
-        path: "/",
+        href: "/dashboard",
+        path: "/dashboard",
       },
     ],
     mini: true,
