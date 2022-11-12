@@ -73,7 +73,6 @@ export default {
       paymentMethod: "",
       paymentAmount: "",
     },
-    chnagedStatus: "",
     deliveryDate: false,
     addPickupDialog: false,
     editStatus: false,
