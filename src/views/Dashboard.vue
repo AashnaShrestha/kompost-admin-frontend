@@ -5,62 +5,53 @@
         <DashboardStatistics
           title="Total Orders"
           icon="mdi-cart-heart"
-          total="155k"
+          total="1500"
         ></DashboardStatistics>
       </v-col>
       <v-col cols="12" sm="6" md="4" lg="4">
         <DashboardStatistics
           title="Total Pickup"
           icon="mdi-delete-empty"
-          total="155k"
+          total="2200"
         ></DashboardStatistics>
       </v-col>
       <v-col cols="12" sm="6" md="4" lg="4">
         <DashboardStatistics
           title="Total Users"
           icon="mdi-account-group-outline"
-          total="155k"
+          total="200"
         ></DashboardStatistics>
       </v-col>
     </v-row>
     <v-row height="100 vh">
-      <v-col cols="12" md="5">
-        <v-card>
+      <v-col cols="12" md="4">
+        <v-card style="height: 335px" class="scroll">
           <v-card-title class="d-flex align-center justify-center"
             >Leaderboard</v-card-title
           >
           <v-card-actions>
             <v-row>
-              <v-col cols="6">
+              <v-col cols="12">
                 <h3 class="d-flex align-center justify-center">Top Sellers</h3>
                 <Leaderboard
                   :headers="headers"
                   :items="topSellerList"
                 ></Leaderboard>
               </v-col>
-              <v-divider vertical></v-divider>
-              <v-col cols="6">
-                <h3 class="d-flex align-center justify-center">Top Buyers</h3>
-                <Leaderboard
-                  :headers="headers"
-                  :items="topBuyerList"
-                ></Leaderboard>
-              </v-col>
             </v-row>
           </v-card-actions>
         </v-card>
       </v-col>
-      <v-col cols="12" md="7">
-      <v-card class="pa-5">
-        <lines
-          :chart-data="chartData"
-          :chart-options="chartOptions"
-          :height="150"
-        ></lines>
-      </v-card>
-    </v-col>
+      <v-col cols="12" md="8">
+        <v-card class="pa-5" style="height: 335px">
+          <lines
+            :chart-data="chartData"
+            :chart-options="chartOptions"
+            :height="150"
+          ></lines>
+        </v-card>
+      </v-col>
     </v-row>
-    
   </v-container>
 </template>
 
@@ -96,12 +87,18 @@ export default {
       { text: "Quantity", align: "left", sortable: true, value: "quantity" },
     ],
     topSellerList: [
-      { name: "Pratistha Shrestha", quantity: "500 kg" },
-      { name: "Palpasa Shrestha", quantity: "1000 kg" },
+      { name: "Botanical Garden", quantity: "1000 kg" },
+      { name: "Kalimati Market", quantity: "875 kg" },
+      { name: "National Agricultural Research Council", quantity: "640 kg" },
+      { name: "Balkhu Tarkari Bazaar", quantity: "530 kg" },
+      { name: "Pratik Amatya", quantity: "335 kg" },
     ],
     topBuyerList: [
-      { name: "Pratik Amatya", quantity: "200 kg" },
-      { name: "Anwesh Dahal", quantity: "200 kg" },
+      { name: "Botanical Garden", quantity: "1000 kg" },
+      { name: "Kalimati Market", quantity: "875 kg" },
+      { name: "National Agricultural Research Council", quantity: "640 kg" },
+      { name: "Balkhu Tarkari Bazaar", quantity: "530 kg" },
+      { name: "Pratik Amatya", quantity: "335 kg" },
     ],
     chartData: {
       labels: ["January", "February", "March", "April", "May", "June"],
@@ -131,3 +128,25 @@ export default {
   components: { DashboardStatistics, Leaderboard, lines: Line },
 };
 </script>
+
+<style scoped>
+.scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  margin-top: 40px;
+    margin-bottom: 40px;
+  border-radius: 8px;
+  background: #ebebeb;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #bbb;
+}
+</style>
