@@ -25,12 +25,12 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="#05386B" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-layout>
         <v-flex>
-          <v-toolbar-title>Application</v-toolbar-title>
+          <v-toolbar-title>KOMPOST</v-toolbar-title>
         </v-flex>
       </v-layout>
 
@@ -80,6 +80,18 @@ export default {
         icon: "mdi-home",
         href: "/dashboard",
         path: "/dashboard",
+      },
+      {
+        title: "Orders",
+        icon: "mdi-cart-heart",
+        href: "/orders",
+        path: "/orders",
+      },
+      {
+        title: "Pickup",
+        icon: "mdi-delete-empty",
+        href: "/pickup",
+        path: "/pickup",
       },
     ],
     mini: true,

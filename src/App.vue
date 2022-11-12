@@ -21,3 +21,11 @@ export default {
   }),
 };
 </script>
+
+<style>
+@import "assets/style.css";
+.v-main__wrap {
+  background-color: #f5f6fa;
+  overflow: hidden;
+}
+</style>
