@@ -5,9 +5,8 @@ const handleLogin = async (queryObj) => {
   const message = await APIManager.axios
     .post(`/v1/admin/login`, queryObj)
     .then((res) => {
-      console.log(res);
       if (res.data.message == "success") {
-        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("token", res.data.data.token);
         return "Success";
       }
     })

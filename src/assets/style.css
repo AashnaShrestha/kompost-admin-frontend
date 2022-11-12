@@ -1,0 +1,27 @@
+#chip.v-chip.Paid,
+#chip.v-chip.delivered{
+    background: #d8f7e6;
+    color: #00692a;
+}
+
+#chip.v-chip.pending {
+    background: #eeedff;
+    color: #392494;
+}
+
+#chip.v-chip.Unpaid,
+#chip.v-chip.cancelled {
+    background: #ffefe4;
+    color: #ee5800;
+}
+
+#button.v-btn{
+    background: #05386B;
+    color: #ffffff;
+}
+
+#button.v-btn.pending,
+#button.v-btn.Inactive {
+    background: #828282;
+    color: #ffffff;
+}
